@@ -4,7 +4,7 @@ import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
 import Typography from '@material-ui/core/Typography'
 
-const API_KEY = 'aAVBhJItx7wPIy61o0E0DYIah5PPN20y'
+const API_KEY = 'RtMGAGKwM44YCUwC3XKK7u4n98n4Tfnv'
 const limit = 10;
 const GIF_URL = 'http://api.giphy.com/v1/gifs/search'
 
@@ -15,12 +15,15 @@ class EventCard extends Component {
         this.state = {
             gif_url: '',
         };
+        this.fetchGif();
     }
 
     refreshGif = res => this.setState({gif_url: res.data[Math.floor(Math.random() * 10)].images.fixed_width.url})
 
-    componentDidMount(){
+    fetchGif(){
+        console.log('fetch gif');
         if(this.props.event){
+            console.log('fetch gif w event');
             var params = {
                 api_key: API_KEY, 
                 limit: limit,
@@ -50,9 +53,14 @@ class EventCard extends Component {
         }
     }
 
+    componentDidUpdate(prevProps){
+        if(this.props.event.event_name != prevProps.event.event_name){
+            this.fetchGif();
+        }
+    }
+
     render(){
         return(
-
             <div>
             {
                 <Card style={{height: "100%"}}>
