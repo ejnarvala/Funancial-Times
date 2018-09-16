@@ -4,7 +4,7 @@ import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
 import Typography from '@material-ui/core/Typography'
 
-const API_KEY = 'RtMGAGKwM44YCUwC3XKK7u4n98n4Tfnv'
+const API_KEY = 'mpPQowi4jX9MLqspeLniostDzEA97CTv'
 const limit = 10;
 const GIF_URL = 'http://api.giphy.com/v1/gifs/search'
 
