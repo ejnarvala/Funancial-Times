@@ -4,7 +4,7 @@ import TextField from '@material-ui/core/TextField';
 import EventCard from '../components/EventCard'
 
 const KENSHO_URL = 'https://www.kensho.com/external/v1/get_calendar'
-const KENSHO_TOKEN = 'Token ccc88aec966ac6982f202dedd8a1ecc8564db364'
+const KENSHO_TOKEN = 'Token '
 
 class EventList extends Component {
     state = {
